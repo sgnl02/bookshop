@@ -14,6 +14,7 @@
 				</select>
 			</div>
 
+		  <input type="hidden" class="form-control" id="action" name="action" value="new">
 		  <div class="form-group">
 		    <label for="addTitle">Title</label>
 		    <input type="text" class="form-control" id="addTitle" name="addTitle" placeholder="Title">

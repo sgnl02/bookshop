@@ -40,13 +40,14 @@
 */
 
 $route['default_controller'] = "home";
-$route['404_override'] = '';
+$route['404_override'] = 'status_404';
 $route['browse'] = "browse";
 $route['search'] = "search";
 $route['add/book'] = "add/addBook";
+$route['edit/book/(:any)'] = "edit/editBook/$1";
 $route['action/check/book'] = "action/checkBook";
 $route['action/insert/book'] = "action/insertBook";
-
+$route['action/update/book'] = "action/updateBook";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

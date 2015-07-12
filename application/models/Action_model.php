@@ -7,17 +7,46 @@ class action_model extends CI_Model {
 	}
 
 	public function checkFields() {
+		$post = $this->input->post();
+		$validation['action'] = $this->input->post('action');
+
 		$addAuthorID = $this->input->post('addAuthorID');
 		$addTitle = $this->input->post('addTitle');
 		$addPublication = $this->input->post('addPublication');
 		$addPrice = $this->input->post('addPrice');
 		$addISBN = $this->input->post('addISBN');
 		$addImage = $this->input->post('addImage');
+		$addIDBook = $this->input->post('addIDBook');
 
-		$post = $this->input->post();
+		if(isset($addIDBook)
+		&& !empty($addIDBook)) {
+			if(is_int($addIDBook)) {
+				$validation['error']['addidbook'] = "Book ID is not a number";
+			}
+			$validation['addidbook']['value'] = $addIDBook;
+	
+			if(empty($addIDBook)) {
+				$validation['error']['addidbook'] = "Book ID is empty";
+			}
+			$validation['addidbook']['value'] = $addIDBook;
+		}
+
+		if($addAuthorID === 'keep') {
+			$validation['authorid']['value'] = $addAuthorID;
+		}
+
+		if(is_int($addAuthorID)) {
+			$validation['error']['authorid'] = "Author ID is not a number";
+		}
+		$validation['authorid']['value'] = $addAuthorID;
 
 		if(empty($addAuthorID)) {
 			$validation['error']['authorid'] = "Author is empty";
+		}
+		$validation['authorid']['value'] = $addAuthorID;
+
+		if(is_int($addAuthorID)) {
+			$validation['error']['authorid'] = "Author ID is not a number";
 		}
 		$validation['authorid']['value'] = $addAuthorID;
 
@@ -158,4 +187,41 @@ class action_model extends CI_Model {
 		}
 	}
 
+	public function updateBook() {
+		$post = $this->input->post();
+
+		$addAuthorID = $this->input->post('addAuthorID');
+		$addTitle = $this->input->post('addTitle');
+		$addPublication = $this->input->post('addPublication');
+		$addPrice = $this->input->post('addPrice');
+		$addImage = $this->input->post('addImage');
+		$addIDBook = $this->input->post('addIDBook');
+
+		$updateBook['title'] = $addTitle;
+		$updateBook['publication'] = $addPublication;
+		$updateBook['price'] = $addPrice;
+		$updateBook['image_url'] = $addImage;
+
+		$updateAuthor['author_id_author'] = $addAuthorID;
+
+		/*
+		 * Update table `book`
+		 */
+
+		$this->db->where('id_book', $addIDBook);
+		$this->db->update('book', $updateBook); 
+
+			if($addAuthorID !== 'keep') {
+				$this->db->where('book_id_book', $addIDBook);
+				$this->db->update('book_has_author', $updateAuthor); 
+			}
+	
+		$this->db->trans_complete();
+
+		if($this->db->trans_status() !== FALSE) {
+			return "update";
+		} else {
+			return "error";
+		}
+	}
 }

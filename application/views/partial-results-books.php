@@ -24,7 +24,7 @@
 	</div>
 	<div class="media-body">
 	<h4 class="media-heading"><?php echo $bookArray['title']; ?></h4>	
-		<a href="edit/<?php echo $bookArray['id_book']; ?>" 
+		<a href="edit/book/<?php echo $bookArray['id_book']; ?>" 
 		class="btn btn-primary pull-right">Edit</a>
 
 		<p><em><?php echo $bookArray['lastname'] . ", 

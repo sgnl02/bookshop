@@ -9,7 +9,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Bookshop!</a>
+				<a class="navbar-brand" href="
+				 	<?php echo "http://" . preg_replace('/index.php/', '', $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME']); ?>
+				 ">Bookshop!</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

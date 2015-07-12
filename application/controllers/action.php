@@ -23,4 +23,13 @@ class action extends CI_Controller {
 		$this->load->view('insertbook', $data);
 		$this->load->view('v_footer');
    }
+
+   public function updateBook() {
+		$data['updateBook'] = $this->action_model->updateBook();
+
+		$this->load->view('v_header');
+		$this->load->view('v_nav');
+		$this->load->view('updatebook', $data);
+		$this->load->view('v_footer');
+   }
 }
