@@ -9,7 +9,7 @@
 		class="form-control" 
 		id="addPrice" 
 		name="addPrice" 
-		placeholder="Price (0.99)" 
+		placeholder="Price (1.00)"
 		value="<?php echo $checkFields['price']['value']; ?>"
 	<?php if(!isset($checkFields['error']['price'])) { echo 'type="hidden"'; } else { echo 'type="input"'; } ?>
 	>

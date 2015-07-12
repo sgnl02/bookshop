@@ -55,7 +55,7 @@
 					class="form-control" 
 					id="addPrice" 
 					name="addPrice" 
-					placeholder="Price"
+					placeholder="Price (1.00)"
 					value="<?php echo $book['price']; ?>">
 			  </div>
 			  <div class="form-group">
@@ -69,7 +69,11 @@
 					value="<?php echo $book['image_url']; ?>">
 			  </div>
 		  <?php } ?>
-		  <button type="submit" class="btn btn-default">Update book</button>
+			<button type="submit" class="btn btn-primary">
+				<span class="glyphicon glyphicon-save"></span>
+
+				Update book
+			</button>
 		</form>
 	</div>
 </div>

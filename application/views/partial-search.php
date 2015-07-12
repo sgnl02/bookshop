@@ -12,12 +12,19 @@
     <input type="text" class="form-control" id="searchPublication" name="searchPublication" placeholder="Publication" value="<?php echo $this->input->post('searchPublication'); ?>">
          <label>
 			  <input type="radio" 
-				id="searchPublicationBefore" name="searchPublicationChoice" value="before" <?php if($this->input->post('searchPublicationChoice') === 'before') { echo "checked"; } ?>>
+			  id="searchPublicationBefore" name="searchPublicationChoice" value="before" 
+				<?php 
+					if($this->input->post('searchPublicationChoice') === 'before') { echo "checked"; } 
+					if($this->input->post('searchPublicationChoice') === 'before' xor 'after'){ echo "checked"; } 
+				?>>
            Before
          </label>
          <label>
 			  <input type="radio" 
-				id="searchPublicationAfter" name="searchPublicationChoice" value="after" <?php if($this->input->post('searchPublicationChoice') === 'after') { echo "checked"; } ?>>
+				id="searchPublicationAfter" name="searchPublicationChoice" value="after" 
+				<?php 
+					if($this->input->post('searchPublicationChoice') === 'after') { echo "checked"; } 
+				?>>
            After
          </label>
   </div>
@@ -27,13 +34,20 @@
          <label>
 			  <input type="radio" 
 				id="searchPriceLessThan" 
-				name="searchPriceChoice" value="less" <?php if($this->input->post('searchPriceChoice') === 'less') { echo "checked"; } ?>>
+				name="searchPriceChoice" value="less" 
+				<?php 
+					if($this->input->post('searchPriceChoice') === 'less') { echo "checked"; } 
+					if($this->input->post('searchPriceChoice') === 'less' xor 'more') { echo "checked"; } 
+				?>>
            Less than
          </label>
          <label>
 			  <input type="radio" 
 				id="searchPriceGreaterThan" 
-				name="searchPriceChoice" value="more" <?php if($this->input->post('searchPriceChoice') === 'more') { echo "checked"; } ?>>
+				name="searchPriceChoice" value="more" 
+				<?php 
+					if($this->input->post('searchPriceChoice') === 'more') { echo "checked"; } 
+				?>>
            Greater than
 		</label>
 	</div>

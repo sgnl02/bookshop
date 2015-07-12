@@ -11,8 +11,12 @@
 	<div class="col-md-8">
 		<h2>Results</h2>
 		<?php 
-			foreach($searchResultsArray as $bookArray) {
-				require 'partial-results-books.php';
+			if(empty($searchResultsArray)) {
+				echo "No results...";
+			} else {
+				foreach($searchResultsArray as $bookArray) {
+					require 'partial-results-books.php';
+				}
 			}
 		?>
 	</div>

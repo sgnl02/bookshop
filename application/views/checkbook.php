@@ -41,7 +41,7 @@
 				</button>';
 			} elseif($checkFields['action'] === 'update' && !isset($checkFields['error'])) {
 				echo '<button type="submit" class="btn btn-primary">
-					<span class="glyphicon glyphicon-update"></span>
+					<span class="glyphicon glyphicon-save"></span>
 					Update book
 				</button>';
 			}
