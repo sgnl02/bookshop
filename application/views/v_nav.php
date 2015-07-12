@@ -23,7 +23,7 @@
 						  <a href="<?php echo base_url('browse'); ?>"><span class="glyphicon glyphicon-search"></span> Browse Catalog</a>
                 </li>
                 <li>
-						  <a href="<?php echo base_url('add/book'); ?>"><span class="glyphicon glyphicon-search"></span> Browse Catalog</a>
+						  <a href="<?php echo base_url('add/book'); ?>"><span class="glyphicon glyphicon-plus"></span> Add book</a>
                 </li>
             </ul>
         </div>
