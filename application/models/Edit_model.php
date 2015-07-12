@@ -7,12 +7,23 @@ class edit_model extends CI_Model {
 	}
 
 	public function getBook($edit_id) {
-		$this->db->select('*');
+		/* 
+		 * If ID of the book does not exist, return to browse
+		 */
+		$this->db->select('id_book');
 		$this->db->from('book');
-		$this->db->where('id_book', $edit_id);
-		$this->db->order_by("title", "asc");
-		
-		return $this->db->get()->result_array();
+		$this->db->like('id_book', $edit_id);
+
+		if($this->db->get()->num_rows() === 0) {
+			redirect('/browse');
+		} else {	
+			$this->db->select('*');
+			$this->db->from('book');
+			$this->db->where('id_book', $edit_id);
+			$this->db->order_by("title", "asc");
+
+			return $this->db->get()->result_array();
+		}
 	}
 
 	public function getAuthors() {
