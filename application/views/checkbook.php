@@ -26,15 +26,24 @@
 			<?php require 'partial-check-price.php'; ?>
 
 			<?php if(isset($checkFields['error'])) { 
-				echo '<button type="submit" class="btn btn-primary">Check again</button>';
+				echo '<button type="submit" class="btn btn-primary">
+					<span class="glyphicon glyphicon-refresh"></span>
+					Check again
+				</button>';
 			} else {
 				echo '<div class="alert alert-info" role="alert">No errors, click the button to continue...</div>';
 			}
 				
 			if($checkFields['action'] === 'new' && !isset($checkFields['error'])) {
-				echo '<button type="submit" class="btn btn-primary">Add book</button>';
+				echo '<button type="submit" class="btn btn-primary">
+					<span class="glyphicon glyphicon-save"></span>
+					Add book
+				</button>';
 			} elseif($checkFields['action'] === 'update' && !isset($checkFields['error'])) {
-				echo '<button type="submit" class="btn btn-primary">Update book</button>';
+				echo '<button type="submit" class="btn btn-primary">
+					<span class="glyphicon glyphicon-update"></span>
+					Update book
+				</button>';
 			}
 			?>
 		</form>

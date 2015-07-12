@@ -25,7 +25,10 @@
 	<div class="media-body">
 	<h4 class="media-heading"><?php echo $bookArray['title']; ?></h4>	
 		<a href="edit/book/<?php echo $bookArray['id_book']; ?>" 
-		class="btn btn-primary pull-right">Edit</a>
+		class="btn btn-primary pull-right">
+			<span class="glyphicon glyphicon-edit"></span>
+			Edit
+		</a>
 
 		<p><em><?php echo $bookArray['lastname'] . ", 
 		" . $bookArray['name']; ?></em></p>
