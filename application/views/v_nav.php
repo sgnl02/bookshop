@@ -15,13 +15,19 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="#"><span class="glyphicon glyphicon-home"></span> Home</a>
+						  <a href="
+								<?php echo "http://" . preg_replace('/index.php/', '', $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME']); ?>
+							"><span class="glyphicon glyphicon-home"></span> Home</a>
                 </li>
                 <li>
-                    <a href="#"><span class="glyphicon glyphicon-search"></span> Browse Catalog</a>
+						  <a href="
+								<?php echo "http://" . preg_replace('/index.php/', '', $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME']); ?>
+							browse"><span class="glyphicon glyphicon-search"></span> Browse Catalog</a>
                 </li>
                 <li>
-                    <a href="#"><span class="glyphicon glyphicon-plus"></span> Add Book</a>
+						  <a href="
+								<?php echo "http://" . preg_replace('/index.php/', '', $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME']); ?>
+							add/book"><span class="glyphicon glyphicon-plus"></span> Add Book</a>
                 </li>
             </ul>
         </div>

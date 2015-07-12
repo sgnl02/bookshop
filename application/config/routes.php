@@ -36,10 +36,16 @@
 | This route will tell the Router what URI segments to use if those provided
 | in the URL cannot be matched to a valid route.
 |
+
 */
 
 $route['default_controller'] = "home";
 $route['404_override'] = '';
+$route['browse'] = "browse";
+$route['search'] = "search";
+$route['add/book'] = "add/addBook";
+$route['action/check/book'] = "action/checkBook";
+$route['action/insert/book'] = "action/insertBook";
 
 
 /* End of file routes.php */
