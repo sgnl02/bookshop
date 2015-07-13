@@ -2,7 +2,7 @@
 class action_model extends CI_Model {
 
 	function __autoload() {
-	   parent::__construct();
+		parent::__construct();
 		$this->load->database();
 	}
 
@@ -19,12 +19,12 @@ class action_model extends CI_Model {
 		$addIDBook = $this->input->post('addIDBook');
 
 		if(isset($addIDBook)
-		&& !empty($addIDBook)) {
+				&& !empty($addIDBook)) {
 			if(is_int($addIDBook)) {
 				$validation['error']['addidbook'] = "Book ID is not a number";
 			}
 			$validation['addidbook']['value'] = $addIDBook;
-	
+
 			if(empty($addIDBook)) {
 				$validation['error']['addidbook'] = "Book ID is empty";
 			}
@@ -69,15 +69,15 @@ class action_model extends CI_Model {
 			$dateToday = date('Y-m-d');
 
 			$datePublication = date($splitPublication[0] 
-				. "-" . $splitPublication[1] 
-				. "-" . $splitPublication[2]);
+					. "-" . $splitPublication[1] 
+					. "-" . $splitPublication[2]);
 
 			/* M-D-Y */
 			if(!checkdate($splitPublication[1]
-				, $splitPublication[2]
-				, $splitPublication[0])) {
-					$validation['error']['publication'] 
-						= "Publication date is not a valid date";
+						, $splitPublication[2]
+						, $splitPublication[0])) {
+				$validation['error']['publication'] 
+					= "Publication date is not a valid date";
 			}
 
 			if($datePublication <= $dateToday) {
@@ -85,9 +85,9 @@ class action_model extends CI_Model {
 			} 
 			else {
 				$validation['error']['publication'] = 
-				"Publication date is in the future 
-				(<a href=\"http://www.amazon.com/Apple-Time-Capsule-2TB-MD032LL/dp/B0057AVXP4\">do 
-				you want to buy a time capsule?</a>)";
+					"Publication date is in the future 
+					(<a href=\"http://www.amazon.com/Apple-Time-Capsule-2TB-MD032LL/dp/B0057AVXP4\">do 
+					 you want to buy a time capsule?</a>)";
 			}
 		}
 		$validation['publication']['value'] = $addPublication;
@@ -154,14 +154,14 @@ class action_model extends CI_Model {
 			$insertBook = "INSERT 
 				INTO book (title, ISBN, publication, price, image_url) 
 				VALUES(
-					".$this->db->escape($addTitle)."
-					, ".$this->db->escape($addISBN)."
-					, ".$this->db->escape($addPublication)."
-					, ".$this->db->escape($addPrice)."
-					, ".$this->db->escape($addImage)."
-				)";	
+						".$this->db->escape($addTitle)."
+						, ".$this->db->escape($addISBN)."
+						, ".$this->db->escape($addPublication)."
+						, ".$this->db->escape($addPrice)."
+						, ".$this->db->escape($addImage)."
+				      )";	
 
-			$this->db->query($insertBook);
+				$this->db->query($insertBook);
 
 			/*
 			 * Get last inserted id of book and insert into the table
@@ -173,9 +173,9 @@ class action_model extends CI_Model {
 			$insertBookHasAuthor = "INSERT 
 				INTO book_has_author (book_id_book, author_id_author) 
 				VALUES(
-					".$this->db->escape($newBookID)."
-					, ".$this->db->escape($addAuthorID)."
-				)";
+						".$this->db->escape($newBookID)."
+						, ".$this->db->escape($addAuthorID)."
+				      )";
 
 			$this->db->query($insertBookHasAuthor);
 
@@ -211,11 +211,11 @@ class action_model extends CI_Model {
 		$this->db->where('id_book', $addIDBook);
 		$this->db->update('book', $updateBook); 
 
-			if($addAuthorID !== 'keep') {
-				$this->db->where('book_id_book', $addIDBook);
-				$this->db->update('book_has_author', $updateAuthor); 
-			}
-	
+		if($addAuthorID !== 'keep') {
+			$this->db->where('book_id_book', $addIDBook);
+			$this->db->update('book_has_author', $updateAuthor); 
+		}
+
 		$this->db->trans_complete();
 
 		if($this->db->trans_status() !== FALSE) {

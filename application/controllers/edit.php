@@ -6,7 +6,7 @@ class edit extends CI_Controller {
 		$this->load->model('edit_model');
 	}
 
-   public function editBook($edit_id) {
+	public function editBook($edit_id) {
 		$data['getBook'] = $this->edit_model->getBook($edit_id);
 		$data['authorsResultsArray'] = $this->edit_model->getAuthors();
 
@@ -14,5 +14,5 @@ class edit extends CI_Controller {
 		$this->load->view('v_nav');
 		$this->load->view('editbook', $data);
 		$this->load->view('v_footer');
-   }
+	}
 }

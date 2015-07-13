@@ -2,7 +2,7 @@
 class search_model extends CI_Model {
 
 	function __autoload() {
-	   parent::__construct();
+		parent::__construct();
 		$this->load->database();
 	}
 
@@ -30,11 +30,11 @@ class search_model extends CI_Model {
 			 * http://stackoverflow.com/posts/14781917/revisions
 			 */
 			$this->db->where("CONCAT(name, ' ', lastname) 
-			LIKE '%" . $searchAuthor . "%'", NULL, FALSE);	
+					LIKE '%" . $searchAuthor . "%'", NULL, FALSE);	
 		}
-		
+
 		if($searchPublicationChoice === 'before'
-		&& isset($searchPublication) && !empty ($searchPublication)) {
+				&& isset($searchPublication) && !empty ($searchPublication)) {
 			/*
 			 * Add remaining month and day, if only a year is present
 			 */
@@ -45,7 +45,7 @@ class search_model extends CI_Model {
 			$this->db->where('publication <=', $searchPublication);
 		} 
 		elseif($searchPublicationChoice === 'after'
-		&& isset($searchPublication) && !empty ($searchPublication)) {
+				&& isset($searchPublication) && !empty ($searchPublication)) {
 			/*
 			 * Add remaining month and day, if only a year is present
 			 */
@@ -55,9 +55,9 @@ class search_model extends CI_Model {
 
 			$this->db->where('publication >=', $searchPublication);
 		}
-		
+
 		if($searchPriceChoice === 'less'
-		&& isset($searchPrice) && !empty ($searchPrice)) {
+				&& isset($searchPrice) && !empty ($searchPrice)) {
 			/*
 			 * Add remaining cents, if no dot is present
 			 */
@@ -68,7 +68,7 @@ class search_model extends CI_Model {
 			$this->db->where('price <=', $searchPrice);
 		} 
 		elseif($searchPriceChoice === 'greater'
-		&& isset($searchPrice) && !empty ($searchPrice)) {
+				&& isset($searchPrice) && !empty ($searchPrice)) {
 			/*
 			 * Add remaining cents, if no dot is present
 			 */

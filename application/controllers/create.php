@@ -6,10 +6,10 @@ class create extends CI_Controller {
 		$this->load->model('add_model');
 	}
 
-   public function index() {
+	public function index() {
 		$this->load->view('v_header');
 		$this->load->view('v_nav');
 		$this->load->view('create');
 		$this->load->view('v_footer');
-   }
+	}
 }

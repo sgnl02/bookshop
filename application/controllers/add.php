@@ -6,12 +6,12 @@ class add extends CI_Controller {
 		$this->load->model('add_model');
 	}
 
-   public function addBook() {
+	public function addBook() {
 		$data['authorsResultsArray'] = $this->add_model->getAuthors();
 
 		$this->load->view('v_header');
 		$this->load->view('v_nav');
 		$this->load->view('addbook', $data);
 		$this->load->view('v_footer');
-   }
+	}
 }
