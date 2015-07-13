@@ -8,17 +8,13 @@
 	  <?php if(!empty($bookArray['image_url'])) { ?>
 	  <a href="#">
 			<img 
-			class="media-object" 
-			src="<?php echo $bookArray['image_url']; ?>" 
-			alt="<?php echo $bookArray['title']; ?>"
+			class="media-object image__placeholder" 
+			data-src="<?php echo $bookArray['image_url']; ?>" 
+			alt="Book cover for <?php echo $bookArray['title']; ?>"
 			width="100" height="100">
 	  </a>
 	  <?php } else { ?>
-			<img 
-			class="media-object" 
-			src="https://placeholdit.imgix.net/~text?txtsize=9&txt=100%C3%97100&w=100&h=100" 
-			alt="<?php echo $bookArray['title']; ?>"
-			width="100" height="100">
+		<div class="image__placeholder"><span class="sr-only">Book cover for <?php echo $bookArray['title']; ?></span></div>
 	  <?php } ?>
 
 	</div>

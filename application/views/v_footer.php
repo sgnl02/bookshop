@@ -8,6 +8,14 @@
   <!-- Bootstrap Core JavaScript -->
   <script src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
 
+  <script src="<?php echo base_url('assets/js/unveil.js');?>"></script>
+
+  <script>
+  $(document).ready(function() {
+    $("img").unveil();
+  });
+  </script>
+
 </body>
 
 </html>
