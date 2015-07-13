@@ -1,13 +1,17 @@
-<h1>Kinedu Bookshop</h1>
+#Kinedu Bookshop
 
-<strong>Aplicación para entrevista técnica de Kinedu</strong>
+I think I have met all the requirements, validation is not optimal (like capitalization).
+It might be a bit too "early" to add more UX or performance-optimization to the website, like
+concatenation of JavaScript or putting first-needed css in the header and things like that.
 
-Es necesario agregar un .htaccess en el root de Bookshop con el siguiente contendio:
+But I made a little start with that, but not too much.
 
-<code>RewriteEngine on</code><br>
-<code>RewriteCond $1 !^(index&#92;.php|img|js|css|assets|robots&#92;.txt|css|img|js)</code><br/>
-<code>RewriteRule ^(.*)$ index.php/$1 [L]</code><br/>
-
-Pueden encontrar el scirpt de la base de datos para importar a phpMyAdmin en database/bookshop.sql
-
-<a href="http://www.codeigniter.com/userguide2/">CodeIgniter 2 User Guide</a>
+##Extra
+* Added icons for buttons
+* Added favicon
+* Added placeholder image in base64
+* Validation, not super strict, only with PHP
+* Downloading images with lazy-loading
+* Preconnecting to another image URL
+* Prefetching unveil.js for lazy-loading, which is loaded later
+* I have left out the fields for validation that are okay, turns out it's confusing for users
